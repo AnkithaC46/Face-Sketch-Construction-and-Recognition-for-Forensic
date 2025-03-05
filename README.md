@@ -57,6 +57,9 @@ This project is a **Forensic Face Sketch Construction and Recognition** system d
 - **Better Matching Algorithm**: Use CNN-based deep learning models for improved accuracy.
 - **Cloud Deployment**: Deploy the project on AWS/GCP for wider accessibility.
 
+## Research Paper
+You can read the full technical paper related to this project here: [Technical Paper Link](https://ijsrem.com/download/face-sketch-construction-and-recognition-for-forensic/)
+
 ## Contributing
 Feel free to fork this repository and submit pull requests with improvements!
 
