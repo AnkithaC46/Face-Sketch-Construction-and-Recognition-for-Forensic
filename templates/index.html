@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a Sketch</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #001f3f, #011a3d);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: #fff;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #e8eaf6;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #000;
+        }
+
+        input[type="file"]:hover {
+            background-color: #c5cae9;
+        }
+
+        button[type="submit"] {
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            background-color: #3949ab;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #303f9f;
+            transform: scale(1.05);
+        }
+
+        a {
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #fff;
+            color: #3949ab;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            input[type="file"], button[type="submit"] {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            a {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your Sketch</h1>
+    <div class="form-container">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="sketch">Choose a sketch file:</label>
+            <input type="file" name="sketch" id="sketch" accept="image/*" required>
+            <button type="submit">Upload and Compare</button>
+        </form>
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>

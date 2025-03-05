@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #001f3f, #011a3d);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 40px;
+            text-align: center;
+            color: #feffff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 30px; /* Space between the images */
+        }
+
+        .image {
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image h2 {
+            font-size: 1.5rem;
+            color: #3949ab;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .details strong {
+            color: #3949ab;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            background-color: #3949ab;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #303f9f;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .image, .details {
+                max-width: 90%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Match Results</h1>
+    {% if result %}
+        <div class="container">
+            <div class="image">
+                <h2>Uploaded Sketch</h2>
+                <img src="{{ url_for('static', filename='uploads/' + result.sketch_path) }}" alt="Uploaded Sketch">
+            </div>
+            <div class="image">
+                <h2>Best Matching Photo</h2>
+                <img src="{{ url_for('static', filename='photos/' + result.photo_path) }}" alt="Best Match">
+            </div>
+        </div>
+        <div class="details">
+            <p><strong>Name:</strong> {{ result.details.name }}</p>
+            <p><strong>Age:</strong> {{ result.details.age }}</p>
+            <p><strong>Date of Birth:</strong> {{ result.details.dob }}</p>
+            <p><strong>Similarity Score (SSIM):</strong> {{ result.similarity }}</p>
+            <p><strong>Status:</strong> {{ result.interpretation }}</p>
+        </div>
+        <a href="/" class="btn">Upload Another Sketch</a>
+    {% else %}
+        <p style="text-align: center; font-size: 1.2rem; color: #888;">No matching result found for the uploaded sketch.</p>
+        <a href="/" class="btn">Try Again</a>
+    {% endif %}
+</body>
+</html>
