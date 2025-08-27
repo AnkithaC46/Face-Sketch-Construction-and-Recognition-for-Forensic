@@ -51,6 +51,31 @@ This project is a **Forensic Face Sketch Construction and Recognition** system d
 2. Submit the sketch to match it with the criminal database.
 3. The backend processes the image and returns possible matches with similarity scores.
 
+## Project Screenshots
+
+
+### Home Page
+<img src="./Project Snapshots/home.jpg" width="500">
+
+### Face Sketch Construction Page
+<img src="./Project Snapshots/face cons1.jpg" width="500">
+
+<img src="./Project Snapshots/finalsketch.jpg" width="500">
+
+
+### Upload Page
+<img src="./Project Snapshots/upload sketch.jpg" width="500">
+
+## Face Sketch Recognition Page
+<img src="./Project Snapshots/match.jpg" width="500">
+<img src="./Project Snapshots/Screenshot 2024-12-14 092555.png" width="500">
+
+
+
+
+
+
+
 ## Future Enhancements
 - **Enhance UI**: Improve the sketch construction interface with more facial elements.
 - **Real-time Sketching**: Implement AI-based automated sketch generation.
