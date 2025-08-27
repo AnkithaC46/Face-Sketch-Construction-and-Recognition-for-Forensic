@@ -63,5 +63,3 @@ You can read the full technical paper related to this project here: [Technical P
 ## Contributing
 Feel free to fork this repository and submit pull requests with improvements!
 
-## License
-This project is licensed under the MIT License.
